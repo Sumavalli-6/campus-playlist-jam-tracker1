@@ -1,0 +1,186 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Campus Playlist JamTracker - discover music and create campus playlists.">
+  <title>JamTracker | Campus Playlist</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="app">
+    <aside class="sidebar">
+      <a href="#" class="brand">
+        <span class="brand-icon">♫</span>
+        <span>JamTracker</span>
+      </a>
+
+      <p class="nav-heading">MENU</p>
+      <nav class="navigation">
+        <a href="#home" class="nav-link active">⌂ <span>Home</span></a>
+        <a href="#discover" class="nav-link">⌕ <span>Discover Music</span></a>
+        <a href="#library" class="nav-link">▤ <span>My Library</span></a>
+        <a href="#community" class="nav-link">♧ <span>Campus Community</span></a>
+      </nav>
+
+      <div class="sidebar-playlists">
+        <p class="nav-heading">YOUR PLAYLISTS</p>
+        <a href="#library" class="playlist-link">♡ Study Vibes</a>
+        <a href="#library" class="playlist-link">☀ Morning Mix</a>
+        <a href="#library" class="playlist-link">♫ Campus Hits</a>
+      </div>
+
+      <div class="sidebar-bottom">
+        <div class="profile-avatar">JT</div>
+        <div>
+          <strong>Campus Listener</strong>
+          <small>Music enthusiast</small>
+        </div>
+      </div>
+    </aside>
+
+    <main class="main-content" id="home">
+      <header class="topbar">
+        <div>
+          <p class="eyebrow">YOUR CAMPUS, YOUR SOUND</p>
+          <h1>Find your next <span>jam.</span></h1>
+        </div>
+        <div class="topbar-tag">♫ Made for students</div>
+      </header>
+
+      <section class="hero">
+        <div class="hero-content">
+          <span class="hero-label">WELCOME TO JAMTRACKER</span>
+          <h2>Good music.<br>Great campus vibes.</h2>
+          <p>Discover songs, build your playlists, and share the music that brings your campus together.</p>
+          <a class="primary-button" href="#discover">Explore music <span>→</span></a>
+        </div>
+        <div class="hero-art" aria-hidden="true">
+          <div class="music-disc">
+            <div class="disc-center">♫</div>
+          </div>
+          <div class="floating-note note-one">♪</div>
+          <div class="floating-note note-two">♫</div>
+          <div class="equalizer">
+            <i></i><i></i><i></i><i></i><i></i><i></i><i></i>
+          </div>
+        </div>
+      </section>
+
+      <section class="section" id="discover">
+        <div class="section-heading">
+          <div>
+            <p class="eyebrow">YOUR NEXT FAVORITE</p>
+            <h2>Discover music</h2>
+          </div>
+          <span class="section-note">Find your vibe</span>
+        </div>
+
+        <div class="search-row">
+          <label class="search-box">
+            <span>⌕</span>
+            <input id="searchInput" type="search"
+              placeholder="Search songs or artists..."
+              aria-label="Search songs or artists">
+          </label>
+          <button id="searchButton" class="search-button" type="button">Search</button>
+        </div>
+
+        <div class="filter-row" aria-label="Music filters">
+          <button class="filter-chip active" data-filter="All" type="button">All songs</button>
+          <button class="filter-chip" data-filter="Pop" type="button">Pop</button>
+          <button class="filter-chip" data-filter="Chill" type="button">Chill</button>
+          <button class="filter-chip" data-filter="Energy" type="button">Energy</button>
+          <button class="filter-chip" data-filter="Study" type="button">Study</button>
+        </div>
+
+        <div id="songList" class="song-grid" aria-live="polite">
+          <article class="song-card">
+            <div class="song-cover cover-purple">♫</div>
+            <div class="song-info">
+              <h3>Campus Dreams</h3>
+              <p>JamTracker Demo</p>
+              <span class="genre-tag">Pop</span>
+            </div>
+            <button class="add-song-button" type="button"
+              data-song="Campus Dreams" aria-label="Add Campus Dreams to playlist">+</button>
+          </article>
+
+          <article class="song-card">
+            <div class="song-cover cover-orange">☀</div>
+            <div class="song-info">
+              <h3>Sunrise Study</h3>
+              <p>JamTracker Demo</p>
+              <span class="genre-tag">Study</span>
+            </div>
+            <button class="add-song-button" type="button"
+              data-song="Sunrise Study" aria-label="Add Sunrise Study to playlist">+</button>
+          </article>
+
+          <article class="song-card">
+            <div class="song-cover cover-blue">♫</div>
+            <div class="song-info">
+              <h3>Midnight Chill</h3>
+              <p>JamTracker Demo</p>
+              <span class="genre-tag">Chill</span>
+            </div>
+            <button class="add-song-button" type="button"
+              data-song="Midnight Chill" aria-label="Add Midnight Chill to playlist">+</button>
+          </article>
+
+          <article class="song-card">
+            <div class="song-cover cover-pink">♪</div>
+            <div class="song-info">
+              <h3>Campus Energy</h3>
+              <p>JamTracker Demo</p>
+              <span class="genre-tag">Energy</span>
+            </div>
+            <button class="add-song-button" type="button"
+              data-song="Campus Energy" aria-label="Add Campus Energy to playlist">+</button>
+          </article>
+        </div>
+        <p id="searchMessage" class="message" role="status"></p>
+      </section>
+
+      <section class="section library-section" id="library">
+        <div class="section-heading">
+          <div>
+            <p class="eyebrow">YOUR PERSONAL COLLECTION</p>
+            <h2>My playlist</h2>
+          </div>
+          <span id="playlistCount" class="count-badge">0 songs</span>
+        </div>
+
+        <div class="playlist-panel">
+          <div class="playlist-art">♫</div>
+          <div class="playlist-details">
+            <h3>My Campus Mix</h3>
+            <p>Your collection of favorite campus tracks.</p>
+            <div id="playlistSongs" class="playlist-songs">
+              <p class="empty-message">Your playlist is empty. Add a song above to get started!</p>
+            </div>
+          </div>
+          <button id="clearPlaylist" class="secondary-button" type="button">Clear playlist</button>
+        </div>
+      </section>
+
+      <section class="community-banner" id="community">
+        <div>
+          <p class="eyebrow">MUSIC BRINGS US TOGETHER</p>
+          <h2>One campus. Many playlists.</h2>
+          <p>Discover music, express your mood, and create your own campus soundtrack.</p>
+        </div>
+        <div class="community-symbol" aria-hidden="true">♫</div>
+      </section>
+
+      <footer class="footer">
+        <span>♫ JamTracker — Campus Playlist Project</span>
+        <span>Built for music-loving students</span>
+      </footer>
+    </main>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>
